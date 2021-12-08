@@ -1,12 +1,9 @@
-import sqlite3
-import re
-import random
-import string
+import sqlite3, random, string, re
 from tkinter import *
-from tkinter import messagebox
 from tkinter import ttk
 from time import strftime
 from datetime import date
+from tkinter import messagebox
 from tkinter import scrolledtext as tkst
 
 

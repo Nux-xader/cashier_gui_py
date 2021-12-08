@@ -1,20 +1,13 @@
-#==================imports===================
-import sqlite3
-import re
-import random
-import string
+import sqlite3, random, string, re
 from tkinter import *
-from tkinter import messagebox
 from tkinter import ttk
 from time import strftime
 from datetime import date
+from tkinter import messagebox
 from tkinter import scrolledtext as tkst
-#============================================
-
 
 
 root = Tk()
-
 root.geometry("1366x768")
 root.title("Retail Manager")
 
@@ -39,13 +32,12 @@ with sqlite3.connect("./Database/store.db") as db:
 
 def random_bill_number(stringLength):
     lettersAndDigits = string.ascii_letters.upper() + string.digits
-    strr=''.join(random.choice(lettersAndDigits) for i in range(stringLength-2))
+    strr = ''.join(random.choice(lettersAndDigits) for i in range(stringLength-2))
     return ('BB'+strr)
 
 
 def valid_phone(phn):
-    if re.match(r"[789]\d{9}$", phn):
-        return True
+    if re.match(r"[789]\d{9}$", phn): return True
     return False
 
 def login(Event=None):
@@ -145,18 +137,16 @@ class Cart:
 
     def total(self):
         total = 0.0
-        for i in self.items:
-            total += i.price * i.qty
+        for i in self.items: total+=i.price * i.qty
         return total
 
     def isEmpty(self):
-        if len(self.items)==0:
-            return True
+        if len(self.items) == 0: return True
         
     def allCart(self):
         for i in self.items:
             if (i.product_name in self.dictionary):
-                self.dictionary[i.product_name] += i.qty
+                self.dictionary[i.product_name]+=i.qty
             else:
                 self.dictionary.update({i.product_name:i.qty})
     

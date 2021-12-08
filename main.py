@@ -1,14 +1,15 @@
-__author__ = "macaw"
 import os
 from tkinter import *
 from tkinter import messagebox
 
 main = Tk()
 main.geometry("1366x768")
-main.title("Big Bazaar")
+main.title("Retail Master")
 main.resizable(0, 0)
+main.configure(background='black')
+
 def Exit():
-    sure = messagebox.askyesno("Exit","Are you sure you want to exit?", parent=main)
+    sure = messagebox.askyesno("Exit", "Are you sure you want to exit?", parent=main)
     if sure == True:
         main.destroy()
         
@@ -25,10 +26,20 @@ def adm():
     os.system("python admin.py")
     main.deiconify()
 
-label1 = Label(main)
-label1.place(relx=0, rely=0, width=1366, height=768)
-img = PhotoImage(file="./images/main.png")
-label1.configure(image=img)
+
+label2 = Label(main)
+label2.place(relx=0.353, rely=0.275)
+label2.configure(text="Welcome to RETAIL MASTER")
+label2.configure(font="-family {Poppins} -size 20")
+label2.configure(foreground="#ffffff")
+label2.configure(background="#000000")
+
+label3 = Label(main)
+label3.place(relx=0.390, rely=0.335)
+label3.configure(text="Please Choose Login")
+label3.configure(font="-family {Poppins} -size 20")
+label3.configure(foreground="#ffffff")
+label3.configure(background="#000000")
 
 button1 = Button(main)
 button1.place(relx=0.316, rely=0.446, width=146, height=90)
