@@ -27,6 +27,11 @@ def adm():
     main.deiconify()
 
 
+label1 = Label(main, bg="black")
+label1.place(relx=0.320, rely=0.11)
+img1 = img2 = PhotoImage(file="./images/logo.png")
+label1.configure(image=img1)
+
 label2 = Label(main)
 label2.place(relx=0.353, rely=0.275)
 label2.configure(text="Welcome to RETAIL MASTER")
