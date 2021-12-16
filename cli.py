@@ -6,6 +6,7 @@ def format_number(data):
     data = list(data)
     data.reverse()
     for num, x in enumerate(data):
+        if not x.isdigit(): continue
         result+=x
         if (num+1)%3 == 0: result+="."
     result = list(result)
